@@ -40,22 +40,24 @@ function mensagens(mensagem) {
         if (api[i].type === "status") {
             container.innerHTML += `<div class="entrou">
                     <p>
-                        <span>${messageInfo.time}</span> <strong>${messageInfo.from}</strong> ${messageInfo.text}
+                        <span>(${messageInfo.time})</span> <strong>${messageInfo.from}</strong> ${messageInfo.text}
                     </p>
                 </div>`;
         } else if (api[i].type === "message") {
             container.innerHTML += ` <div class="normal">
                     <p>
-                        <span>${messageInfo.time}</span> <strong>${messageInfo.from}</strong> para
+                        <span>(${messageInfo.time})</span> <strong>${messageInfo.from}</strong> para
                         <strong>${messageInfo.to}:</strong> ${messageInfo.text}
                     </p>
                 </div>`;
         } else if (api[i].type === "private_message") {
-            container.innerHTML += ` <p>
-                        <span>${messageInfo.time}</span>
+            container.innerHTML += ` <div class="privado">
+                     <p>
+                        <span>(${messageInfo.time})</span>
                         <strong>${messageInfo.from}</strong> reservadamente para
                         <strong>${messageInfo.to}:</strong> ${messageInfo.text}
-                    </p>`;
+                    </p>
+                    </div>`;
         }
     }
     rolarFinal();
